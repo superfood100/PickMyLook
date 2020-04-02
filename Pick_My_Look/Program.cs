@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using System.Data.SqlClient;
 using System.Data.Common;
 using System.Configuration;
 
@@ -552,10 +553,15 @@ namespace Pick_My_Look
             Console.WriteLine();
         }
 
+        public static void DBRegister()
+        {
+            DbProviderFactories.RegisterFactory("System.Data.SqlClient", SqlClientFactory.Instance);
+        }
+
         static void Main(string[] args)
         {
-            
 
+            DBRegister();
                 
             
 
